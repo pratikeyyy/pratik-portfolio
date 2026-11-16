@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #080B11;
+  color: #F3F4F6;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar GTA Style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080B11;
+}
+::-webkit-scrollbar-thumb {
+  background: #FDB813;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2A85;
+}
+
+/* Scanline Overlay for Retro Eras */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* GTA Glitch Effect */
+.gta-glitch-text {
+  text-shadow: 2px 2px #FF2A85, -2px -2px #00F0FF;
+}
+
+/* Neon Text Glow */
+.neon-vice {
+  text-shadow: 0 0 10px #FF2A85, 0 0 20px #FF2A85, 0 0 40px #FF2A85;
+}
+
+.neon-cyan {
+  text-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF;
+}
+
+.gold-glow {
+  text-shadow: 0 0 12px rgba(253, 184, 19, 0.6);
+}
+
+/* Map Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(253, 184, 19, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
