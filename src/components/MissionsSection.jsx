@@ -34,7 +34,7 @@ export default function MissionsSection({ onNotify }) {
             </h2>
           </div>
           <div className="text-xs text-gray-400 bg-[#0F1523] px-3 py-1.5 rounded border border-gray-800 self-start md:self-auto font-bold">
-            ALL 4 MISSIONS PASSED • 100% COMPLETION
+            ALL {missions.length} MISSIONS PASSED • 100% COMPLETION
           </div>
         </div>
 

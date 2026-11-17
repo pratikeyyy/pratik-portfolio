@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { soundManager } from '../sound/audioEffects';
-import { Navigation, Radio } from 'lucide-react';
+import { Navigation, Radio, X } from 'lucide-react';
 
 export default function MiniMap({ onNotify }) {
   const [expanded, setExpanded] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const waypoints = [
     { name: "PROFILE", href: "#profile", x: 45, y: 35, color: "#22c55e" },
@@ -22,8 +23,28 @@ export default function MiniMap({ onNotify }) {
     if (elem) elem.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Collapsed by default: the radar used to sit on top of hero text and
+  // project cards. A small pill keeps it one tap away without covering content.
+  if (collapsed) {
+    return (
+      <button
+        onClick={() => {
+          soundManager.playMenuClick();
+          setCollapsed(false);
+        }}
+        onMouseEnter={() => soundManager.playHover()}
+        title="Open Radar GPS"
+        aria-label="Open Radar GPS"
+        className="fixed bottom-4 left-4 z-30 flex items-center space-x-2 bg-[#060A14]/95 backdrop-blur-md border-2 border-gray-700/80 hover:border-green-500 rounded-full pl-3 pr-4 py-2.5 shadow-[0_0_25px_rgba(0,0,0,0.85)] text-green-400 font-mono select-none"
+      >
+        <Radio size={14} className="animate-pulse" />
+        <span className="text-[10px] font-bold tracking-widest">RADAR GPS</span>
+      </button>
+    );
+  }
+
   return (
-    <aside aria-label="HUD Mini-Radar" className="fixed bottom-4 left-4 z-30 hidden md:block select-none font-mono">
+    <aside aria-label="HUD Mini-Radar" className="fixed bottom-4 left-4 z-30 select-none font-mono">
       <div 
         className={`relative bg-[#060A14]/95 backdrop-blur-md rounded-2xl border-2 border-gray-700/80 shadow-[0_0_25px_rgba(0,0,0,0.85)] overflow-hidden transition-all duration-300 ${
           expanded ? "w-64 h-64" : "w-44 h-44"
@@ -85,12 +106,22 @@ export default function MiniMap({ onNotify }) {
             <Radio size={10} className="animate-pulse" />
             <span>RADAR GPS</span>
           </span>
-          <button 
-            onClick={() => setExpanded(!expanded)} 
-            className="text-[8px] text-gray-400 hover:text-white bg-black/50 px-1 rounded"
-          >
-            {expanded ? "MIN" : "EXP"}
-          </button>
+          <div className="flex items-center space-x-1">
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="text-[8px] text-gray-400 hover:text-white bg-black/50 px-1 rounded"
+            >
+              {expanded ? "MIN" : "EXP"}
+            </button>
+            <button
+              onClick={() => setCollapsed(true)}
+              title="Collapse radar"
+              aria-label="Collapse radar"
+              className="text-gray-400 hover:text-white bg-black/50 px-1 rounded flex items-center"
+            >
+              <X size={10} />
+            </button>
+          </div>
         </div>
 
         {/* Location Footer */}

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import confetti from 'canvas-confetti';
 import { soundManager } from '../sound/audioEffects';
 import { GithubIcon } from './CustomIcons';
@@ -21,9 +22,9 @@ export default function MissionModal({ mission, onClose }) {
     });
   };
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="relative w-full max-w-3xl max-h-[90vh] bg-[#0A0F1D] border-2 border-amber-400 rounded-2xl shadow-[0_0_40px_rgba(253,184,19,0.3)] overflow-hidden flex flex-col font-mono text-white">
+      <div className="relative w-full max-w-3xl max-h-[90vh] bg-[#0A0F1D] border-2 border-amber-400 rounded-2xl shadow-[0_0_40px_rgba(253,184,19,0.3)] overflow-hidden overflow-x-hidden flex flex-col font-mono text-white">
         
         {/* Header Bar */}
         <div className="flex items-center justify-between bg-[#121A2E] border-b border-gray-800 p-4 sm:p-5">
@@ -143,19 +144,22 @@ export default function MissionModal({ mission, onClose }) {
               <span>SOURCE REPO</span>
             </a>
 
-            <a
-              href={mission.liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-lg flex items-center space-x-2 transition-colors shadow-[0_0_10px_rgba(0,240,255,0.3)]"
-            >
-              <ExternalLink size={15} />
-              <span>LIVE SYSTEM</span>
-            </a>
+            {mission.liveDemo && (
+              <a
+                href={mission.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-lg flex items-center space-x-2 transition-colors shadow-[0_0_10px_rgba(0,240,255,0.3)]"
+              >
+                <ExternalLink size={15} />
+                <span>LIVE SYSTEM</span>
+              </a>
+            )}
           </div>
         </div>
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
