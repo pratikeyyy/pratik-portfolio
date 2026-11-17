@@ -105,6 +105,41 @@ export const portfolioData = {
     {
       id: "mission-01",
       number: "MISSION 01",
+      title: "KHATASETU",
+      tagline: "AI Ledger Intelligence for Kirana Shops",
+      era: "GTA V LIVE OPS",
+      eraBadge: "SHIPPED & LIVE",
+      status: "MISSION COMPLETE",
+      reward: "$500,000 • 10,000 RP",
+      location: "Indian Kirana Grid / Cloud Ledger HQ",
+      difficulty: "MASTER",
+      brief: "Ship a live digital ledger for Indian kirana shopkeepers: photograph a handwritten paper khata page and Gemini Vision OCR extracts the ledger entries into a searchable digital ledger, with customer balances, transactions, and WhatsApp reminders.",
+      technologies: [
+        "Flutter",
+        "FastAPI",
+        "PostgreSQL",
+        "Google Gemini Vision AI",
+        "Render",
+        "Neon"
+      ],
+      keyFeatures: [
+        "Gemini Vision OCR reads handwritten khata photos and extracts ledger entries in ~20 seconds — cut from 5+ minutes with a background worker and a lite-first model cascade.",
+        "JWT/bcrypt authentication with sessions that stay logged in across app restarts; customer balances, transactions, and WhatsApp reminders.",
+        "Flutter app + FastAPI backend + Neon Postgres, deployed live with GitHub Actions Android APK builds — $0 running cost.",
+        "Fuzzy name matching with a human review step before entries are saved, so a misread name never corrupts the ledger."
+      ],
+      github: "https://github.com/pratikeyyy/khatasetu",
+      liveDemo: "https://pratikeyyy.github.io/khatasetu/",
+      metrics: {
+        ocr: "~20s OCR",
+        auth: "JWT / bcrypt",
+        platform: "Render + Neon",
+        cost: "$0 / month"
+      }
+    },
+    {
+      id: "mission-02",
+      number: "MISSION 02",
       title: "MEDICINE AI ASSISTANT",
       tagline: "Multimodal Visual Healthcare Intelligence",
       era: "GTA V AI INNOVATION",
@@ -126,8 +161,8 @@ export const portfolioData = {
         "Cloud deployment on Hugging Face Spaces ensuring 24/7 global accessibility and scalable inference.",
         "Automated dosage extraction, drug safety cross-checks, and formatted instruction briefs."
       ],
-      github: "https://github.com",
-      liveDemo: "https://huggingface.co/spaces",
+      github: "https://github.com/pratikeyyy/AI-Medicine-Checker",
+      liveDemo: null,
       metrics: {
         accuracy: "98.4%",
         latency: "< 1.2s",
@@ -136,8 +171,8 @@ export const portfolioData = {
       }
     },
     {
-      id: "mission-02",
-      number: "MISSION 02",
+      id: "mission-03",
+      number: "MISSION 03",
       title: "REAL-TIME OBJECT DETECTOR",
       tagline: "High-Speed Neural Surveillance & Tracking",
       era: "GTA IV COMPUTER VISION",
@@ -159,8 +194,8 @@ export const portfolioData = {
         "Custom OpenCV visualization engine with dynamic trajectory trails and bounding-box telemetry.",
         "Optimized for live camera streams, traffic monitoring, and prerecorded high-definition feeds."
       ],
-      github: "https://github.com",
-      liveDemo: "https://github.com",
+      github: "https://github.com/pratikeyyy/Real-Time-Object-Detector",
+      liveDemo: null,
       metrics: {
         fps: "45+ FPS",
         tracking: "ByteTrack Associative",
@@ -169,8 +204,8 @@ export const portfolioData = {
       }
     },
     {
-      id: "mission-03",
-      number: "MISSION 03",
+      id: "mission-04",
+      number: "MISSION 04",
       title: "DELHI BUS TRACKER PRO",
       tagline: "Live Transit Radar & WebSocket Fleet Sync",
       era: "GTA SAN ANDREAS RADAR",
@@ -195,8 +230,8 @@ export const portfolioData = {
         "MongoDB database schema modeling routes, bus stops, timetables, and passenger metrics.",
         "Interactive live map telemetry with dynamic arrival predictions and responsive mobile layout."
       ],
-      github: "https://github.com",
-      liveDemo: "https://github.com",
+      github: "https://github.com/pratikeyyy/delhi-bus-tracker-pro",
+      liveDemo: null,
       metrics: {
         sync: "Live WebSocket",
         database: "MongoDB Atlas",
@@ -205,8 +240,8 @@ export const portfolioData = {
       }
     },
     {
-      id: "mission-04",
-      number: "MISSION 04",
+      id: "mission-05",
+      number: "MISSION 05",
       title: "MUSIC FACTORY",
       tagline: "80s Synthwave Audio Studio & Showcase",
       era: "GTA VICE CITY SYNTH",
@@ -227,8 +262,8 @@ export const portfolioData = {
         "100% mobile-friendly responsive architecture optimized for all screen resolutions.",
         "Semantic markup structure ensuring cross-browser reliability and smooth interaction."
       ],
-      github: "https://github.com",
-      liveDemo: "https://github.com",
+      github: "https://github.com/pratikeyyy/MUSIC-FACTORYY",
+      liveDemo: null,
       metrics: {
         framework: "Bootstrap 5",
         responsive: "100% Mobile Ready",
@@ -247,11 +282,14 @@ export const portfolioData = {
       { name: "CSS3", level: "Master", desc: "Modern Flexbox, Grid, Animations, Tailwind architectures" }
     ],
     "Frontend": [
+      { name: "React", level: "Advanced", desc: "Component-based UI, hooks, state management" },
+      { name: "Flutter", level: "Advanced", desc: "Cross-platform mobile apps, state management, Material UI" },
       { name: "Bootstrap 5", level: "Advanced", desc: "Component architecture, utilities, responsive grid" },
       { name: "Responsive Web Design", level: "Master", desc: "Mobile-first layouts, fluid typography, breakpoint systems" },
       { name: "Gradio", level: "Expert", desc: "Rapid AI web demos, interactive model inference interfaces" }
     ],
     "Backend": [
+      { name: "FastAPI", level: "Expert", desc: "Python REST APIs, JWT auth, background tasks, SQLAlchemy" },
       { name: "Node.js", level: "Advanced", desc: "Event-driven runtime, microservices, stream processing" },
       { name: "Express.js", level: "Advanced", desc: "RESTful endpoints, middleware chains, authentication" }
     ],
@@ -269,6 +307,7 @@ export const portfolioData = {
       { name: "OpenCV", level: "Expert", desc: "Image processing, video pipelines, matrix transformations, feature extraction" }
     ],
     "Databases": [
+      { name: "PostgreSQL", level: "Advanced", desc: "Relational schema design, Neon Postgres, connection pooling" },
       { name: "MongoDB", level: "Advanced", desc: "NoSQL document stores, aggregation pipelines, schema indexing" },
       { name: "SQL", level: "Advanced", desc: "Relational queries, joins, table normalization, transactions" }
     ],
@@ -444,10 +483,10 @@ export const portfolioData = {
     title: "SAFEHOUSE // CONTACT PLAYER",
     location: "PRATIK KUMAR DIGITAL SAFEHOUSE • DELAYS: ZERO",
     tagline: "Mission Dispatch & Direct Encrypted Communication",
-    email: "pratikkumar.ai.dev@gmail.com",
-    emailLink: "mailto:pratikkumar.ai.dev@gmail.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    email: "pratik.x.kumar@gmail.com",
+    emailLink: "mailto:pratik.x.kumar@gmail.com",
+    github: "https://github.com/pratikeyyy",
+    linkedin: "https://www.linkedin.com/in/pratik-kumar0610/",
     status: "ONLINE & OPEN FOR OPPORTUNITIES",
     coordinates: "28.6280° N, 77.3649° E // NCR DISTRICT",
     missionPassedMessage: "MISSION ACCOMPLISHED — PRATIK KUMAR READY FOR DEPLOYMENT"
